@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caesar Cipher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <main class="page">
+      <header class="hero">
+        <div class="hero-badge" aria-hidden="true">⌁</div>
+        <h1>Caesar Cipher</h1>
+        <p class="tagline">Shift letters by a key from {{ min_shift }} to {{ max_shift }}. Everything runs locally.</p>
+      </header>
+
+      <section class="card">
+        <label class="field-label" for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Type or paste text here…" spellcheck="true"></textarea>
+
+        <div class="shift-row">
+          <label class="field-label" for="shift">Key shift</label>
+          <div class="shift-control">
+            <input id="shift" type="range" min="{{ min_shift }}" max="{{ max_shift }}" value="3" />
+            <output id="shift-value" for="shift">3</output>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="btn-encrypt">Encrypt</button>
+          <button type="button" class="btn btn-ghost" id="btn-decrypt">Decrypt</button>
+          <button type="button" class="btn btn-ghost" id="btn-swap" title="Use output as new input">Use output ↓</button>
+        </div>
+
+        <p id="error-text" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card output-card">
+        <label class="field-label" for="output">Result</label>
+        <textarea id="output" rows="5" readonly placeholder="Encrypted or decrypted text appears here…"></textarea>
+        <button type="button" class="btn btn-secondary" id="btn-copy">Copy result</button>
+      </section>
+
+      <section class="card help-card">
+        <h2>How it works</h2>
+        <ul>
+          <li>Each letter moves forward (encrypt) or backward (decrypt) in the alphabet by the key amount.</li>
+          <li>Numbers, spaces, and punctuation are left unchanged.</li>
+          <li>Decrypt with the same key you used to encrypt.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

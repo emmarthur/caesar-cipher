@@ -1,0 +1,187 @@
+:root {
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-display: "Outfit", var(--font-body);
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --bg: #0f1419;
+  --accent: #f59e0b;
+  --accent-dim: #b45309;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(245, 158, 11, 0.22);
+  --text: #fef3c7;
+  --text-muted: #fcd34d99;
+  --radius: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: radial-gradient(ellipse 120% 80% at 50% -20%, #422006 0%, var(--bg) 55%);
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.page {
+  position: relative;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.5rem;
+  font-family: var(--font-mono);
+  color: var(--bg);
+  background: linear-gradient(145deg, var(--accent), var(--accent-dim));
+  border-radius: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 5vw, 2.1rem);
+  margin: 0 0 0.4rem;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.field-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
+textarea {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0.75rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.shift-row {
+  margin-top: 1rem;
+}
+
+.shift-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.shift-control input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+}
+
+.shift-control output {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.95rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #1c1917;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary {
+  margin-top: 0.65rem;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+}
+
+.error {
+  margin: 0.65rem 0 0;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+.help-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+}
+
+.help-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
