@@ -20,6 +20,7 @@
         <div class="hero-badge" aria-hidden="true">⌁</div>
         <h1>Caesar Cipher</h1>
         <p class="tagline">Shift letters by a key from {{ min_shift }} to {{ max_shift }}. Everything runs locally.</p>
+        <button type="button" class="help-jump-btn" data-help-jump>Help</button>
       </header>
 
       <section class="card">
@@ -49,12 +50,21 @@
         <button type="button" class="btn btn-secondary" id="btn-copy">Copy result</button>
       </section>
 
-      <section class="card help-card">
-        <h2>How it works</h2>
+      <section class="card help" aria-labelledby="help-heading">
+        <h2 id="help-heading">Help</h2>
+        <h3>About this app</h3>
+        <p>
+          A <strong>Caesar cipher</strong> replaces each letter with another letter shifted along the
+          alphabet by your chosen key ({{ min_shift }}–{{ max_shift }}). It is a simple substitution
+          cipher — fine for puzzles, not for real security.
+        </p>
+        <h3>How to use it</h3>
         <ul>
-          <li>Each letter moves forward (encrypt) or backward (decrypt) in the alphabet by the key amount.</li>
-          <li>Numbers, spaces, and punctuation are left unchanged.</li>
-          <li>Decrypt with the same key you used to encrypt.</li>
+          <li>Type or paste text in <strong>Message</strong>, set the <strong>Key shift</strong> slider, then click <strong>Encrypt</strong> or <strong>Decrypt</strong>.</li>
+          <li>Only letters change; digits, spaces, and punctuation stay the same.</li>
+          <li>Decrypt with the <strong>same key</strong> you used to encrypt.</li>
+          <li><strong>Use output ↓</strong> copies the result back into the message field for chaining operations.</li>
+          <li><strong>Copy result</strong> sends the output to your clipboard.</li>
         </ul>
       </section>
     </main>

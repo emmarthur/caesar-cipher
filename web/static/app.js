@@ -53,6 +53,15 @@ btnSwap.addEventListener("click", () => {
   messageEl.focus();
 });
 
+document.querySelectorAll("[data-help-jump]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById("help-heading")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+});
+
 btnCopy.addEventListener("click", async () => {
   if (!outputEl.value) return;
   try {
